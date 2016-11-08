@@ -14,6 +14,9 @@ pb = Pushbullet("YOUR_PUSHBULLET_API_KEY")
 pathname = os.path.dirname(sys.argv[0])        
 fpath= os.path.abspath(pathname)
 
+if not os.path.exists(fpath+"/known"):
+    open('file', 'w').close() 
+
 with open(fpath+"/known") as g:
     known = g.readlines()
 
